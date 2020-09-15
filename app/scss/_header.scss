@@ -1,0 +1,147 @@
+.header {
+
+  //Mobile Menu Styles
+  .overlay {
+   
+    position: fixed;
+    top: 3.75rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient($darkBlue, transparent);
+  }
+
+
+  &.open {
+
+    .overlay{
+      top: 0;
+      animation: fade-in .3s ease-in forwards;
+    }
+
+    .header__toggle{
+
+      span:first-child {
+        transform: rotate(45deg);
+
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:last-child {
+        transform: rotate(-45deg);
+        transform-origin: 3px 1px;
+      }
+    }
+
+
+  }
+
+
+  nav {
+    position: relative;
+    background: white;
+    padding-top: 1.06rem;
+     padding-bottom: 1.06rem;
+  }
+  
+
+  &__logo {
+
+    img {
+      width: 8.8rem;
+      height: 1.3rem;
+    }
+
+  }
+
+  &__toggle {
+    //mobile menu
+    margin-right: 1rem;
+    >span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: $darkBlue;
+      transition: all .3s ease-in-out;
+      transform-origin: 3px 2px;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+
+
+
+  }
+
+  &__menu{
+    z-index: 3;
+    background: white;
+    padding: 1.6rem 0;
+    margin-top: 1.5rem;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    width: calc(100% - 3rem);
+    transform: translateX(-50%);
+
+   
+    a{
+      display: block;
+      text-align: center;
+      color: $darkBlue;
+      padding: .6rem;
+      
+      
+    }
+  }
+
+  &__links {
+
+    //for desktop
+    a {
+      position: relative;
+      font-size: $font-medium;
+      color: $grayishBlue;
+      transition: color 200ms ease-in-out;
+
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 5px;
+        background: linear-gradient(to right, $limeGreen, $brightCyan);
+        left: 0;
+        right: 0;
+        bottom: -30px;
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+      }
+
+      &:hover {
+        color: $darkBlue;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    
+    color: white;
+    transition: opacity .3s ease-in-out;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}

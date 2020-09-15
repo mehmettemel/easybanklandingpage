@@ -1,0 +1,109 @@
+.footer{
+  background-color: $darkBlue;
+  color: $white;
+  padding: 2.5rem;
+  text-align: center;
+  a{
+    color: $white;
+    transition: color .3s ease-in-out;
+
+    &:hover{
+      color: $grayishBlue;
+    }
+  }
+
+  .container{
+
+    @include breakpoint-up(large){
+      display: grid;
+      grid-template-columns: repeat(3,1fr) 1.7fr;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: 
+      "logo links1 links2 cta"
+      "social links1 links2 copyright";
+      justify-items: start;
+    }
+  }
+
+  
+
+
+  &__logo{
+    //display block demezsek margin çalışmıyor.
+    margin-bottom: 1.8rem;
+    display: inline-block;
+    
+
+    @include breakpoint-up(large){
+      grid-area: logo;
+      margin-top: 1rem;
+      justify-self: start;
+      align-items: center;
+      
+    }
+  }
+
+  &__social{
+    margin-top: 1.5rem;
+    margin-bottom: 1.8rem;
+
+    a:not(:last-child){
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    @include breakpoint-up(large){
+      grid-area: social;
+    }
+  }
+
+  &__links{
+    display: flex;
+    flex-direction: column;
+    line-height: 2.5;
+    width: 100%;
+    justify-items: right;
+   
+
+   
+
+    @include breakpoint-up(large){
+     
+    }
+
+    &.col1{
+      @include breakpoint-up(large){
+        grid-area: links1;
+        justify-items: end;
+      }
+    }
+
+    &.col2{
+      margin-bottom: 1.8rem;
+      @include breakpoint-up(large){
+        grid-area: links2;
+      }
+    }
+  }
+
+  &__cta{
+
+    a{
+
+      &:hover{
+        color: white;
+      }
+      
+    }
+    margin-bottom: 1.8rem;
+    @include breakpoint-up(large){
+      grid-area: cta;
+      justify-self: end;
+    }
+  }
+
+  &__copyright{
+    grid-area: copyright;
+    justify-self: end;
+  }
+
+}
