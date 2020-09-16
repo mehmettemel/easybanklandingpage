@@ -1,8 +1,9 @@
+import "./gsap.js";
 const body = document.querySelector("body")
 const btnHamburger = document.getElementById("btnHamburger");
-const header = document.querySelector(".header")
-const overlay = document.querySelector(".overlay")
-const fadeElems = document.querySelectorAll(".has-fade")
+const header = document.querySelector(".header");
+const overlay = document.querySelector(".overlay");
+const fadeElems = document.querySelectorAll(".has-fade");
 
 
 btnHamburger.addEventListener("click",()=>{
@@ -26,3 +27,4 @@ btnHamburger.addEventListener("click",()=>{
     
   }
 })
+
